@@ -6,7 +6,7 @@ import axios from 'axios';
 // });
 
 const instance = axios.create({
- baseURL: "https://split-backend-1.onrender.com/api",
+ baseURL: "https://split-backend-2.onrender.com/api",
   withCredentials: true,
 });
 
