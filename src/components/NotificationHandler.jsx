@@ -33,7 +33,7 @@ const NotificationHandler = () => {
 
   const handleApprove = async () => {
     try {
-      await axios.put(`/api/settlements/approve/${settlementRequest.settlementId}`);
+      await axios.put(`/settlements/approve/${settlementRequest.settlementId}`);
       toast.success("Settlement approved!");
       setSettlementRequest(null);
     } catch (err) {
@@ -43,7 +43,7 @@ const NotificationHandler = () => {
 
   const handleReject = async () => {
     try {
-      await axios.delete(`/api/settlements/reject/${settlementRequest.settlementId}`);
+      await axios.delete(`/settlements/reject/${settlementRequest.settlementId}`);
       toast.info("Settlement rejected.");
       setSettlementRequest(null);
     } catch (err) {
