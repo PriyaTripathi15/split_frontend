@@ -6,7 +6,7 @@ import {
   ChevronDown
 } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
-
+import axios from "../utils/axios";
 const ChatBotWidget = () => {
   const [input, setInput] = useState('');
   const [messages, setMessages] = useState([]);
@@ -21,7 +21,7 @@ const ChatBotWidget = () => {
     setInput('');
 
     try {
-      const res = await axios.post('http://localhost:5000/api/chat', { message: input });
+      const res = await axios.post('/chat', { message: input });
       const botMessage = { role: 'bot', content: res.data.reply };
       setMessages((prev) => [...prev, botMessage]);
     } catch (err) {
